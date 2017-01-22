@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Prueba Tecnica Desarrollado En la mayor parte en PHP</title>
+
+    <!-- Bootstrap -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="row" style="padding-top: 40px">
+        <div class="col-md-6 col-md-offset-3">
+
+            <div class="form-group">
+               <bold><h1> Details of Employee</h1></bold>
+            </div>
+            <br>
+            <div class="form-group">
+                <h2>Name: <?php echo $employee["name"] ?></h2>
+            </div>
+
+            <div class="form-group">
+                <h2>Email: <?php echo $employee["email"] ?></h2>
+            </div>
+            <div class="form-group">
+                <h2>Phone: <?php echo $employee["phone"] ?></h2>
+            </div>
+            <div class="form-group">
+                <h2>Address: <?php echo $employee["address"] ?></h2>
+            </div>
+            <div class="form-group">
+                <h2>Position: <?php echo $employee["position"] ?></h2>
+            </div>
+            <div class="form-group">
+                <h2>Salary: <?php echo $employee["salary"] ?></h2>
+            </div>
+
+            <div class="form-group">
+                <h2>Skills: <?php $str = "";
+                    foreach ($employee["skills"] as $row) :
+                        $str = $str . $row["skill"] . " - ";
+                    endforeach;
+                    echo substr($str, 0, strlen($str) - 2)
+                    ?>
+                </h2>
+            </div>
+
+            <div class="form-group text-right">
+                <a href="<?php echo HOST ?>/listar"> <button  class="btn btn-success">Back</button></a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="assets/js/bootstrap.js"></script>
+</body>
+</html>
+
